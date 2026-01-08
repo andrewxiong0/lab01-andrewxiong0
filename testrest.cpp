@@ -15,16 +15,21 @@ void test_copyconstructor(){
     for(int i = 0; i < 5; i++){
         list1.push_back(arr[i]);
     }
+    cout << "1" << endl;
 
     IntList list2(list1);
+    list2.print();
+    cout << "2" << endl;
     assert(list1.count()== 5);
     assert(list2.count()==list1.count());
+    cout << "3" << endl;
     for(int i = 0; i<5; i++){
         list1.push_back(2*arr[i]);
     }
+    cout << "4" << endl;
     assert(list1.count()== 10);
     assert(list2.count()== 5);
-
+    cout << "5" << endl;
 }
 
 
