@@ -57,6 +57,7 @@ bool IntList::contains(int value) const {
 
 // returns maximum value in list, or 0 if empty list
 int IntList::max() const {
+    if(!head && !tail) return 0;
     Node* curr = head;
     int max = -2147483648;
     while(curr){
@@ -70,6 +71,7 @@ int IntList::max() const {
 // returns average (arithmetic mean) of all values, or
 // 0 if list is empty
 double IntList::average() const {
+    if(!head && !tail) return 0;
     Node* curr = head;
     double avg = sum();
     int co = count();
@@ -113,6 +115,7 @@ int IntList::count() const {
 //Assignment operator should copy the list from the source
 //to this list, deleting/replacing any existing nodes
 IntList& IntList::operator=(const IntList& source){
+    if(this == &source) return *this;
     Node* curr = head;
     Node* temp = nullptr;
     while(curr){
